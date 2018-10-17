@@ -30,6 +30,7 @@ public class Consumer implements Runnable {
 				System.out.println("List is empty " + Thread.currentThread().getName() + " is waiting, size "+sharedResource.size());
 				sharedResource.wait();
 			}
+			//sharedResource.wait(); //Illegal monitor state exception as wait and notify must always be inside synchronized block
 		}
 
 		// producing element and notify consumers
